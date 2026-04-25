@@ -6,8 +6,8 @@ MAIN_ALL=main.cpp
 CODE=\
 client/Render.cpp\
 client/UiRenderer.cpp\
-client/Components/EndGameScreen.cpp\
-client/Components/InterLevelScreen.cpp\
+client/components/EndGameScreen.cpp\
+client/components/InterLevelScreen.cpp\
 game/Data.cpp\
 game/State.cpp\
 game/GameManager.cpp\
