@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 env:
   EM_VERSION: 4.0.8
   EM_CACHE_FOLDER: emsdk-cache
@@ -15,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Setup EMSDK Cache
         uses: actions/cache@v4
