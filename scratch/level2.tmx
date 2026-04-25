@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="12" tilewidth="29" tileheight="28" infinite="0" nextlayerid="3" nextobjectid="1">
+ <tileset firstgid="1" name="bricks_tiles" tilewidth="29" tileheight="28" tilecount="32" columns="8">
+  <image source="../src/assets/bricks_tiles.png" width="232" height="112"/>
+ </tileset>
+ <layer id="1" name="Tile Layer 1" width="20" height="12">
+  <data encoding="csv">
+0,0,0,1,2,1,2,1,2,1,2,1,2,1,2,1,2,0,0,0,
+0,1,2,1,2,9,10,0,0,1,2,5,6,0,0,9,10,1,2,0,
+0,0,0,1,2,1,2,0,0,3,4,7,8,3,4,1,2,0,0,0,
+0,0,0,1,2,1,2,0,0,9,10,3,4,0,0,1,2,0,0,0,
+0,15,16,3,4,3,4,1,2,0,0,0,0,1,2,3,4,15,16,0,
+0,0,0,0,0,3,4,1,2,0,0,0,0,1,2,3,4,0,0,0,
+0,0,0,0,0,3,4,3,4,1,2,1,2,3,4,3,4,0,0,0,
+0,0,0,0,0,0,0,1,2,1,2,1,2,0,0,0,0,0,0,0,
+0,9,10,0,0,0,0,0,0,3,4,3,4,0,0,0,0,9,10,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="2" name="Object Layer 1"/>
+</map>

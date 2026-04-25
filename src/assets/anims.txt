@@ -1,0 +1,673 @@
+#
+invisible
+noloop
+invisible_0 100
+
+#
+player
+noloop
+player_normal_up_0 100
+
+#
+player_normal_up
+noloop
+player_normal_up_0 100
+
+#
+player_normal_up_bounce
+noloop
+player_normal_up_1 100
+
+#
+player_normal_left
+noloop
+player_normal_left_0 100
+
+#
+player_normal_left_bounce
+noloop
+player_normal_left_1 100
+
+#
+player_normal_right
+noloop
+player_normal_right_0 100
+
+#
+player_normal_right_bounce
+noloop
+player_normal_right_1 100
+
+#
+player_intro
+noloop
+playerIntro_0 75
+playerIntro_1 75
+playerIntro_2 75
+playerIntro_3 75
+playerIntro_4 75
+playerIntro_5 75
+playerIntro_6 170
+playerIntro_7 50
+playerIntro_8 50
+playerIntro_9 50
+playerIntro_10 100
+playerIntro_11 100
+playerIntro_12 100
+playerIntro_13 100
+player_normal_up_0 100
+
+#
+player_short_up
+noloop
+player_short_up_0 100
+
+#
+player_short_up_bounce
+noloop
+player_short_up_1 100
+
+#
+player_short_left
+noloop
+player_short_left_0 100
+
+#
+player_short_left_bounce
+noloop
+player_short_left_1 100
+
+#
+player_short_right
+noloop
+player_short_right_0 100
+
+#
+player_short_right_bounce
+noloop
+player_short_right_1 100
+
+#
+player_sticky_up
+noloop
+player_sticky_up_0 100
+
+#
+player_sticky_up_bounce
+noloop
+player_sticky_up_1 100
+
+#
+player_sticky_left
+noloop
+player_sticky_up_0 100
+
+#
+player_sticky_left_bounce
+noloop
+player_sticky_up_1 100
+
+#
+player_sticky_right
+noloop
+player_sticky_up_0 100
+
+#
+player_sticky_right_bounce
+noloop
+player_sticky_up_1 100
+
+#
+brick_normal
+noloop
+brick_normal_0 100
+
+#
+brick_normal_destroyed
+noloop
+brick_normal_0 75
+brick_normal_1 75
+brick_normal_2 75
+brick_normal_3 75
+invisible_0 100
+
+#
+brick_normal_green
+noloop
+brick_normal_green_0 100
+
+#
+brick_normal_green_destroyed
+noloop
+brick_normal_green_0 75
+brick_normal_1 75
+brick_normal_2 75
+brick_normal_3 75
+invisible_0 100
+
+#
+brick_normal_pink
+noloop
+brick_normal_pink_0 100
+
+#
+brick_normal_pink_destroyed
+noloop
+brick_normal_pink_0 75
+brick_normal_1 75
+brick_normal_2 75
+brick_normal_3 75
+invisible_0 100
+
+#
+brick_normal_blue
+noloop
+brick_normal_blue_0 100
+
+#
+brick_normal_blue_destroyed
+noloop
+brick_normal_blue_0 75
+brick_normal_1 75
+brick_normal_2 75
+brick_normal_3 75
+invisible_0 100
+
+#
+brick_powerup
+loop
+brickPowerup_0 100
+brickPowerup_1 100
+brickPowerup_2 100
+
+#
+brick_powerup_destroyed
+noloop
+brickPowerup_0 100
+brick_normal_1 100
+brick_normal_2 100
+brick_normal_3 100
+invisible_0 100
+
+#
+brick_powerup_bad
+loop
+brick_powerup_bad_0 100
+brick_powerup_bad_1 100
+brick_powerup_bad_2 100
+
+#
+brick_powerup_bad_destroyed
+noloop
+brick_powerup_bad_0 100
+brick_normal_1 100
+brick_normal_2 100
+brick_normal_3 100
+invisible_0 100
+
+#
+brick_metal
+noloop
+brickMetal_0 100
+
+#
+brick_metal_destroyed
+noloop
+brickExplosion_0 100
+brickExplosion_1 100
+brickExplosion_2 100
+brickExplosion_3 100
+brickExplosion_4 100
+brickExplosion_5 100
+brickExplosion_6 100
+invisible_0 100
+
+#
+brick_metalBomb
+loop
+brickMetalBomb_0 75
+brickMetalBomb_1 75
+brickMetalBomb_2 75
+
+#
+brick_metalBomb_destroyed
+noloop
+brickExplosion_0 50
+brickExplosion_1 50
+brickExplosion_2 50
+brickExplosion_3 50
+brickExplosion_4 50
+brickExplosion_5 50
+brickExplosion_6 50
+invisible_0 100
+
+#
+brick_powerup_metal
+noloop
+brick_powerup_metal_0 100
+
+#
+brick_powerup_metal_destroyed
+noloop
+brick_powerup_metal_0 100
+brick_normal_1 100
+brick_normal_2 100
+brick_normal_3 100
+invisible_0 100
+
+#
+brick_powerup_armor
+loop
+brick_powerup_armor_0 100
+
+#
+brick_powerup_time
+noloop
+brick_powerup_time_0 100
+brick_powerup_time_1 100
+brick_powerup_time_2 100
+brick_powerup_time_1 100
+
+#
+brick_brittle0
+noloop
+brick_brittle_0 100
+
+#
+brick_brittle1
+noloop
+brick_brittle_1 100
+
+#
+brick_brittle2
+noloop
+brick_brittle_2 100
+
+#
+brick_brittle3
+noloop
+brick_brittle_3 100
+
+#
+brick_brittle_destroyed
+noloop
+brick_brittle_4 100
+brick_brittle_5 100
+brick_brittle_6 100
+brick_brittle_7 100
+invisible_0 100
+
+#
+brick_small_expl
+noloop
+brick_small_expl_0 100
+brick_small_expl_1 100
+brick_small_expl_2 100
+brick_small_expl_3 100
+brick_small_expl_5 100
+invisible_0 100
+
+#
+brick_vent
+noloop
+brick_vent_0 100
+
+#
+brick_blockborder2
+noloop
+brick_blockborder2_0 100
+invisible_0 100
+
+#
+brick_blockborder1
+noloop
+brick_blockborder1_0 100
+invisible_0 100
+
+#
+brick_metal_square
+noloop
+brick_metal_square_0 100
+
+#
+brick_metal_circle
+noloop
+brick_metal_circle_0 100
+
+#
+brick_normal_square
+noloop
+brick_normal_square_0 100
+
+#
+brick_normal_circle
+noloop
+brick_normal_circle_0 100
+
+#
+brick_small_square_destroyed
+noloop
+brick_normal_square_0 75
+brick_small_fade_0 100
+brick_small_fade_2 100
+invisible_0 100
+
+#
+brick_small_circle_destroyed
+noloop
+brick_normal_circle_0 75
+brick_small_fade_1 100
+brick_small_fade_3 100
+invisible_0 100
+
+#
+brick_small_vent
+noloop
+brick_small_vent_0 100
+
+#
+brick_small_indestructible
+noloop
+brick_small_indestructible_0 100
+
+#
+ball_metal
+noloop
+ball_armored_0 100
+
+#
+ball_normal
+noloop
+ball_highlighted_3 50
+ball_highlighted_2 50
+ball_highlighted_0 50
+ball_normal_0 100
+
+#
+ball_armored
+noloop
+ball_armored_0 100;
+
+#
+ball_extra
+noloop
+ball_highlighted_0 100
+ball_extra_0 100
+
+#
+ball_damaged
+noloop
+ball_highlighted_0 100
+ball_damaged_0 100
+
+#
+powerup_good
+loop
+powerup_good_0 100
+powerup_good_1 100
+
+#
+powerup_bad
+loop
+powerup_bad_0 100
+powerup_bad_1 100
+
+#
+mana
+noloop
+mana_0 100;
+
+#
+ball_out
+noloop
+ball_out_anim_0 75
+ball_out_anim_1 75
+ball_out_anim_2 75
+ball_out_anim_3 75
+ball_out_anim_4 75
+invisible_0 100
+
+#
+ball_highlighted
+noloop
+ball_highlighted_0 100
+ball_highlighted_1 100
+ball_highlighted_2 100
+ball_highlighted_3 100
+
+#
+player2_up
+noloop
+player2_up_0 100
+
+#
+player2_left
+noloop
+player2_left_0 100
+
+#
+player2_right
+noloop
+player2_right_0 100
+
+#
+player2_intro
+noloop
+player2_intro_0 100
+player2_intro_1 100
+player2_intro_2 100
+player2_intro_3 100
+player2_intro_4 100
+player2_up_0 100
+
+#
+player2_flash
+loop
+player2_flash_0 100
+player2_flash_1 100
+player2_flash_2 100
+player2_flash_3 100
+player2_flash_2 100
+player2_flash_1 100
+player2_flash_0 100
+player2_up_0 100
+
+#
+player2_explode
+noloop
+player2_explode_0 75
+player2_explode_1 75
+player2_explode_2 75
+player2_explode_3 125
+player2_explode_4 75
+player2_explode_5 75
+player2_explode_6 75
+player2_explode_7 75
+player2_explode_8 75
+player2_explode_9 75
+player2_explode_10 75
+invisible_0 100
+
+#
+paddle2_intro
+noloop
+invisible_0 600
+paddle2_intro_0 100
+paddle2_intro_1 100
+paddle2_intro_2 100
+paddle2_intro_3 100
+paddle2_normal_0 100
+
+#
+paddle2_sparkle
+noloop
+invisible_0 500
+paddle2_sparkle_0 100
+paddle2_sparkle_1 100
+paddle2_sparkle_2 100
+paddle2_sparkle_3 100
+
+#
+paddle2_normal
+noloop
+paddle2_normal_0 100
+
+#
+paddle2_short
+noloop
+paddle2_short_0 100
+
+#
+paddle2_invisible
+noloop
+invisible_0 100
+
+#
+wall_top_in
+noloop
+wall_top_1 100
+wall_top_0 100
+
+#
+wall_top_out
+noloop
+wall_top_0 100
+wall_top_1 100
+invisible_0 100
+
+#
+wall_bottom_in
+noloop
+wall_bottom_1 100
+wall_bottom_0 100
+
+#
+wall_bottom_out
+noloop
+wall_bottom_0 100
+wall_bottom_1 100
+invisible_0 100
+
+#
+wall_left_in
+noloop
+wall_left_1 100
+wall_left_0 100
+
+#
+wall_left_out
+noloop
+wall_left_0 100
+wall_left_1 100
+invisible_0 100
+
+#
+wall_right_in
+noloop
+wall_right_1 100
+wall_right_0 100
+
+#
+wall_right_out
+noloop
+wall_right_0 100
+wall_right_1 100
+invisible_0 100
+
+#
+fan_to_up
+loop
+fan_to_up_0 33
+fan_to_up_1 33
+invisible_0 33
+
+#
+fan_to_up_2
+loop
+fan_to_up_0 50
+fan_to_up_1 50
+invisible_0 33
+
+#
+fan_to_right
+loop
+fan_to_right_0 33
+fan_to_right_1 33
+invisible_0 33
+
+#
+fan_to_right_2
+loop
+fan_to_right_0 50
+fan_to_right_1 50
+invisible_0 33
+
+#
+fan_to_left
+loop
+fan_to_left_0 33
+fan_to_left_1 33
+invisible_0 33
+
+#
+fan_to_left_2
+loop
+fan_to_left_0 50
+fan_to_left_1 50
+invisible_0 33
+
+#
+fan_to_upright
+loop
+fan_to_upright_0 33
+fan_to_upright_1 33
+invisible_0 33
+
+#
+fan_to_upright_2
+loop
+fan_to_upright_0 50
+fan_to_upright_1 50
+invisible_0 33
+
+#
+fan_to_upleft
+loop
+fan_to_upleft_0 33
+fan_to_upleft_1 33
+invisible_0 33
+
+#
+fan_to_upleft_2
+loop
+fan_to_upleft_0 50
+fan_to_upleft_1 50
+invisible_0 33
+
+#
+fan_to_downright
+loop
+fan_to_downright_0 33
+fan_to_downright_1 33
+invisible_0 33
+
+#
+fan_to_downright_2
+loop
+fan_to_downright_0 50
+fan_to_downright_1 50
+invisible_0 33
+
+#
+fan_to_downleft
+loop
+fan_to_downleft_0 33
+fan_to_downleft_1 33
+invisible_0 33
+
+#
+fan_to_downleft_2
+loop
+fan_to_downleft_0 50
+fan_to_downleft_1 50
+invisible_0 33

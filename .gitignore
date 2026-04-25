@@ -1,0 +1,26 @@
+web/ULTRAELASTICITY
+web/ULTRAELASTICITY.js
+web/ULTRAELASTICITY.data
+src/ULTRAELASTICITY*
+dist/
+workspace/
+.build/
+.cache/
+*.o
+*.d
+*.exe
+*.wasm
+*.a
+compile_commands.json
+output.log
+*.zip
+*.tar.gz
+*.ini
+hiscore.txt
+sdl2w/
+# make: SDL2W_STAMP in src/Makefile (touched after clone / repo present)
+sdl2w/.source_ok
+node_modules/
+*.log
+TESTUI*
+*.zst

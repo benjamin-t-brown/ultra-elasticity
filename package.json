@@ -1,0 +1,19 @@
+{
+  "name": "ultraelasticity",
+  "version": "1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "npm install && npm run clean && (cd src && make clean && make js) && npm run mv",
+    "build:dev": "npm run build",
+    "build:levels": "node scratch/tmx-to-levels.js && cp scratch/levels.txt src/assets/levels.txt",
+    "mv": "mkdirp dist && cp -rv web/* dist/",
+    "compile-commands": "cd scripts && bash compile-commands.sh",
+    "clean": "rm -rf dist",
+    "dist": "http-server dist -p 8080 -c-1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "mkdirp": "^3.0.1"
+  }
+}
