@@ -38,13 +38,18 @@ LIB_DEPENDS := $(patsubst %.cpp,%.d,$(LIB_CODE))
 SDL2W_STAMP = $(SDL2W_DIR_NAME)/.source_ok
 SDL2W_LIB = lib/sdl2w/libsdl2w.a
 
-EMCC_LIBS=\
+# Subset of Emscripten port flags: needed when compiling sdl2w to .o (static lib), not only at final link.
+EMCC_SDL_PORTS=\
 -s USE_SDL=2\
 -s USE_SDL_IMAGE=2\
 -s USE_SDL_MIXER=2\
 -s SDL2_IMAGE_FORMATS='["png"]'\
 -s USE_SDL_TTF=2\
--s USE_SDL_GFX=2\
+-s USE_SDL_GFX=2
+
+# Link-time (includes EMCC_SDL_PORTS).
+EMCC_LIBS=\
+$(EMCC_SDL_PORTS)\
 -s ALLOW_MEMORY_GROWTH=1\
 -s SAFE_HEAP=0\
 -s ASSERTIONS=1\
@@ -124,7 +129,7 @@ $(SDL2W_LIB): $(SDL2W_STAMP)
 
 sdl2w_wasm: $(SDL2W_STAMP)
 	@echo "Building sdl2w library for WebAssembly (running 'make wasm' in $(SDL2W_DIR_NAME)/src)...";
-	$(MAKE) -C "$(SDL2W_DIR_NAME)/src" -j8 wasm "FLAGS=-Wall -std=c++17 -Oz"
+	$(MAKE) -C "$(SDL2W_DIR_NAME)/src" -j8 wasm "FLAGS=-Wall -std=c++17 -Oz $(EMCC_SDL_PORTS)"
 	@$(MAKE) _copy_sdl2w_artifacts
 
 _copy_sdl2w_artifacts:
