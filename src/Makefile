@@ -100,7 +100,7 @@ endif
 
 .PHONY: all sdl2w_wasm sdl2w-rebuild _copy_sdl2w_artifacts
 
-all: $(EXE)
+all: sdl2w $(EXE)
 
 $(EXE): $(OBJECTS) $(LIB_OBJECTS) $(MAIN_ALL_OBJECT) $(SDL2W_LIB)
 	$(CXX) $(FLAGS) $(INCLUDES) $(MAIN_ALL_OBJECT) $(OBJECTS) $(LIB_OBJECTS) -o $(EXE)$(EXE_SUFFIX) $(LIBS)
@@ -162,7 +162,7 @@ clean:
 	rm -f $(EXE) $(EXE).exe
 	rm -rf main.d
 	rm -rf .build
-	# rm -rf lib/sdl2w
+	rm -rf lib/sdl2w
 	rm -rf $(SDL2W_BUILD_OUTPUT_DIR)
 	rm -rf $(SDL2W_DIR_NAME)/src/build/
 	rm -rf ../dist/$(EXE).*
