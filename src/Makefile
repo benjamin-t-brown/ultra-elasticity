@@ -20,6 +20,7 @@ game/updaters/UpdatePlayer.cpp
 LIB_CODE=\
 lib/hiscore/hiscore.cpp\
 
+
 TARGET ?= native
 BASE_BUILD_DIR = build
 
@@ -56,7 +57,7 @@ $(EMCC_SDL_PORTS)\
 -s INITIAL_MEMORY=326565888\
 -s ENVIRONMENT=web\
 -s DISABLE_EXCEPTION_CATCHING=0\
--Llib/sdl2w -lsdl2w -lidbfs.js
+-lidbfs.js
 
 EMCC_EXPORTED=\
 -s EXPORTED_FUNCTIONS='[\
@@ -71,26 +72,28 @@ EMCC_EXPORTED=\
 ]'\
 -s EXPORTED_RUNTIME_METHODS=['ccall']
 
-DEBUG=true
-LIBS=-Llib/sdl2w
-INCLUDES= -I.
+DEBUG = true
+LIBS += -Llib/sdl2w -lsdl2w 
+INCLUDES += -I.
 ifeq ($(TARGET),wasm)
     FLAGS = -Wall -std=c++17 -Oz
-    LIBS = $(EMCC_LIBS) $(EMCC_EXPORTED) --preload-file assets
-    EXE_SUFFIX=.js
+    LIBS += $(EMCC_LIBS) $(EMCC_EXPORTED) --preload-file assets
+    EXE_SUFFIX = .js
     CXX = em++
 else
     FLAGS = -O0 -Wall -std=c++17 -fno-omit-frame-pointer
-    CXX = g++
+    ifndef CXX
+        CXX = g++
+    endif
     ifeq ($(OS),Windows_NT)
-        LIBS += -lsdl2w -mconsole -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_gfx
+        LIBS += -mconsole -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_gfx
     else
         UNAME_S := $(shell uname -s)
         ifeq ($(UNAME_S),Darwin)
-            LIBS += -L/opt/homebrew/lib -L/usr/local/lib -lsdl2w -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_gfx
+            LIBS += -L/opt/homebrew/lib -L/usr/local/lib-lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_gfx
             INCLUDES += -I/opt/homebrew/include -I/usr/local/include
         else
-            LIBS += -lsdl2w -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_gfx
+            LIBS += -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_gfx
         endif
     endif
     ifeq ($(DEBUG),true)
@@ -100,7 +103,8 @@ endif
 
 .PHONY: all sdl2w_wasm sdl2w-rebuild _copy_sdl2w_artifacts
 
-all: sdl2w $(EXE)
+all: sdl2w
+	$(MAKE) $(EXE)
 
 $(EXE): $(OBJECTS) $(LIB_OBJECTS) $(MAIN_ALL_OBJECT) $(SDL2W_LIB)
 	$(CXX) $(FLAGS) $(INCLUDES) $(MAIN_ALL_OBJECT) $(OBJECTS) $(LIB_OBJECTS) -o $(EXE)$(EXE_SUFFIX) $(LIBS)
@@ -110,7 +114,7 @@ sdl2w: $(SDL2W_LIB)
 
 # Force a full sdl2w rebuild + copy (use after upgrading sdl2w or changing its build).
 sdl2w_rebuild:
-	$(MAKE) -C "$(SDL2W_DIR_NAME)/src" -j8 all
+	$(MAKE) -C "$(SDL2W_DIR_NAME)/src" all
 	@$(MAKE) _copy_sdl2w_artifacts
 
 $(SDL2W_STAMP):
@@ -124,12 +128,12 @@ $(SDL2W_STAMP):
 
 $(SDL2W_LIB): $(SDL2W_STAMP)
 	@echo "Building standard sdl2w library (running 'make all' in $(SDL2W_DIR_NAME)/src)...";
-	$(MAKE) -C "$(SDL2W_DIR_NAME)/src" -j8 all
+	$(MAKE) -C "$(SDL2W_DIR_NAME)/src" all
 	@$(MAKE) _copy_sdl2w_artifacts
 
 sdl2w_wasm: $(SDL2W_STAMP)
 	@echo "Building sdl2w library for WebAssembly (running 'make wasm' in $(SDL2W_DIR_NAME)/src)...";
-	$(MAKE) -C "$(SDL2W_DIR_NAME)/src" -j8 wasm "FLAGS=-Wall -std=c++17 -Oz $(EMCC_SDL_PORTS)"
+	$(MAKE) -C "$(SDL2W_DIR_NAME)/src" wasm
 	@$(MAKE) _copy_sdl2w_artifacts
 
 _copy_sdl2w_artifacts:
@@ -148,7 +152,7 @@ run:
 	./$(EXE)
 
 js: sdl2w_wasm
-	$(MAKE) TARGET=wasm -j8 $(EXE)
+	$(MAKE) TARGET=wasm $(EXE)
 	mv $(EXE).js ../web/
 	mv $(EXE).data ../web/
 	mv $(EXE).wasm ../web/
@@ -166,3 +170,5 @@ clean:
 	rm -rf $(SDL2W_BUILD_OUTPUT_DIR)
 	rm -rf $(SDL2W_DIR_NAME)/src/build/
 	rm -rf ../dist/$(EXE).*
+	rm -rf $(SDL2W_STAMP)
+
