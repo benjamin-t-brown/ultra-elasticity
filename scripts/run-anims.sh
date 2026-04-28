@@ -5,17 +5,27 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="${SCRIPT_DIR}/.."
 TOOLS_DIR="${REPO_ROOT}/sdl2w/src/build/tools"
+SDL2W_SRC_DIR="${REPO_ROOT}/sdl2w/src"
 RUN_DIR="${REPO_ROOT}/src"
 ASSETS_DIR="${REPO_ROOT}/src/assets"
 SPRITES_FILE="${ASSETS_DIR}/sprites.txt"
 ANIMS_FILE="${ASSETS_DIR}/anims.txt"
 SOUNDS_FILE="${ASSETS_DIR}/sounds.txt"
 
-if [ ! -d "${TOOLS_DIR}" ]; then
-  echo "Error: tools directory not found at ${TOOLS_DIR}" >&2
-  echo "Build the tools first: (cd sdl2w/src && make tools)" >&2
+if [ ! -d "${SDL2W_SRC_DIR}" ]; then
+  echo "Error: sdl2w source directory not found at ${SDL2W_SRC_DIR}" >&2
   exit 1
 fi
+
+build_anims_if_missing() {
+  if [ -f "${TOOLS_DIR}/Anims.exe" ] || [ -f "${TOOLS_DIR}/Anims" ]; then
+    return 0
+  fi
+  echo "Anims binary not found. Building with make tools..."
+  (cd "${SDL2W_SRC_DIR}" && make tools)
+}
+
+build_anims_if_missing
 
 ANIMS_BIN="${TOOLS_DIR}/Anims"
 if [ -f "${TOOLS_DIR}/Anims.exe" ]; then
@@ -23,8 +33,8 @@ if [ -f "${TOOLS_DIR}/Anims.exe" ]; then
 fi
 
 if [ ! -f "${ANIMS_BIN}" ]; then
-  echo "Error: Anims binary not found in ${TOOLS_DIR}" >&2
-  echo "Build it first: (cd sdl2w/src && make tools)" >&2
+  echo "Error: Anims binary still not found in ${TOOLS_DIR} after build." >&2
+  echo "Try manually: (cd sdl2w/src && make tools)" >&2
   exit 1
 fi
 
