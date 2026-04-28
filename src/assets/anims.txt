@@ -398,7 +398,7 @@ ball_extra_0 100
 ball_damaged
 noloop
 ball_highlighted_0 100
-ball_damaged_0 100
+ball_stored_0 100
 
 #
 powerup_good

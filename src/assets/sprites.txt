@@ -1,3 +1,6 @@
+Picture,plf,assets/player.png
+SpriteList,invisible,1,1,1
+
 Picture,bricks,assets/bricks2.png
 SpriteList,brick_unused,7,58,28
 SpriteList,brick_normal,4,58,28
@@ -17,7 +20,7 @@ SpriteList,brick_small_expl,6,58,28
 SpriteList,brick_vent,1,58,28
 SpriteList,brick_blockborder2,1,58,28
 SpriteList,brick_blockborder1,1,58,28
-SpriteList,invisible,1,1,1
+
 
 Picture,bricks_small,assets/bricks_small.png
 SpriteList,brick_metal_square,1,29,28
