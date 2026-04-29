@@ -89,7 +89,7 @@ body {
 }
 
 .scaffold-buttons {
-  width: 160px;
+  width: 280px;
   pointer-events: none;
 }
 
@@ -104,6 +104,15 @@ body {
   text-align: center;
   min-width: 48px;
   pointer-events: auto;
+  transform: scale(1.5);
+}
+
+/* If screen is like a sideways phone (aspect ratio >= 1.8:1, e.g., 18:9 or wider landscape) */
+@media (min-aspect-ratio: 1/1) {
+  .scaffold-button {
+    transform: scale(1.25);
+    opacity: 0.3;
+  }
 }
 .scaffold-button:active {
   border: 1px solid black;
