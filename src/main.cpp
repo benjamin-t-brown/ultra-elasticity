@@ -19,8 +19,8 @@ void runProgram(int argc, char** argv) {
                        {
                            .mode = sdl2w::DrawMode::GPU,
                            .title = TRANSLATE("Ultra Elasticity"),
-                           .w = !emshelpers::isEmscriptenEnv() ? w * 2 : w,
-                           .h = !emshelpers::isEmscriptenEnv() ? h * 2 : h,
+                           .w = !emshelpers::isEmscriptenEnv() ? w * 1 : w,
+                           .h = !emshelpers::isEmscriptenEnv() ? h * 1 : h,
                            .x = 25, // SDL_WINDOWPOS_UNDEFINED
                            .y = 50, // SDL_WINDOWPOS_UNDEFINED
                            .renderW = w,
@@ -73,7 +73,7 @@ void runProgram(int argc, char** argv) {
     return true;
   };
 
-  window.setInitTimeMax(500); // show splash screen for at least 0.5 seconds
+  window.setInitTimeMax(5000); // show splash screen for at least 0.5 seconds
   window.startRenderLoop(_initializeLoop, _onInitialized, _mainLoop);
 }
 

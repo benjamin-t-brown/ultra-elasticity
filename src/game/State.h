@@ -26,7 +26,7 @@ struct GameParams {
   double stuckMotionWindowMs = 16.0; // 2 integration frames if fixedDt is 8
   double stuckMotionMinDistPx = 1.5;
   int numStartingBalls = 5;
-  int startingLevel = 7;
+  int startingLevel = 0;
   int fixedDt = 8;
   bool playMenuMusic = true;
 };
