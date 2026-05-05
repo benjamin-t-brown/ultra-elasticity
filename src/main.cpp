@@ -73,7 +73,7 @@ void runProgram(int argc, char** argv) {
     return true;
   };
 
-  window.setInitTimeMax(5000); // show splash screen for at least 0.5 seconds
+  window.setInitTimeMax(500); // show splash screen for at least 0.5 seconds
   window.startRenderLoop(_initializeLoop, _onInitialized, _mainLoop);
 }
 
