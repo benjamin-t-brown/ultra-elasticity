@@ -90,7 +90,7 @@ else
     else
         UNAME_S := $(shell uname -s)
         ifeq ($(UNAME_S),Darwin)
-            LIBS += -L/opt/homebrew/lib -L/usr/local/lib-lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_gfx
+            LIBS += -L/opt/homebrew/lib -L/usr/local/lib -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_gfx
             INCLUDES += -I/opt/homebrew/include -I/usr/local/include
         else
             LIBS += -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer -lSDL2_gfx
@@ -139,8 +139,8 @@ sdl2w_wasm: $(SDL2W_STAMP)
 _copy_sdl2w_artifacts:
 	@mkdir -p lib/sdl2w
 	@echo "Copying sdl2w artifacts from $(SDL2W_BUILD_OUTPUT_DIR) to lib/sdl2w..."
-	@cp -uv $(SDL2W_BUILD_OUTPUT_DIR)/lib/libsdl2w.a lib/sdl2w
-	@cp -uv $(SDL2W_BUILD_OUTPUT_DIR)/include/*.h lib/sdl2w
+	@cp -v $(SDL2W_BUILD_OUTPUT_DIR)/lib/libsdl2w.a lib/sdl2w
+	@cp -v $(SDL2W_BUILD_OUTPUT_DIR)/include/*.h lib/sdl2w
 
 -include $(DEPENDS)
 -include $(LIB_DEPENDS)
